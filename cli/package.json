@@ -1,7 +1,7 @@
 {
   "name": "bnb-dev-sdk",
   "main": "dist/index.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "kamal singh",
   "repository": "https://github.com/kamalbuilds/bnbdevsdk",
   "description": "A CLI tool to quickly spin up a Full Stack Dapp on all BNB supported Chains including OPBNB , Greenfield and Binance Smart Chain",
@@ -39,7 +39,7 @@
     "commander": "^9.1.0",
     "detect-package-manager": "^2.0.1",
     "got": "11.8.5",
-    "ora": "^8.0.1",
+    "ora": "^5.4.1",
     "rimraf": "^3.0.2",
     "tar": "^6.1.11",
     "tslog": "^3.3.3",
