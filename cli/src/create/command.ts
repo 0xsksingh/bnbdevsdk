@@ -26,7 +26,7 @@ export async function twCreate(pPath: string = "", options: any) {
       )} because of npm naming restrictions:`
     );
 
-    problems?.forEach((p) => console.error(`    ${chalk.red.bold("*")} ${p}`));
+    problems?.forEach((p) => console.error(`   ${chalk.red.bold("*")} ${p}`));
     process.exit(1);
   }
 
