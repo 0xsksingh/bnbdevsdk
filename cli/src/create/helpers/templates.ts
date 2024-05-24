@@ -28,9 +28,12 @@ export async function downloadAndExtractRepo(
   root: string,
   { name, filePath }: RepoInfo
 ): Promise<void> {
-  const tempFile = await downloadTar(
-    `https://codeload.github.com/kamalbuilds/${name}/tar.gz/main`
-  );
+
+  console.log("Downloading files from repo...",`https://codeload.github.com/kamalbuilds/${name}/tar.gz/master`);
+
+  const tempFile = await downloadTar(`https://codeload.github.com/kamalbuilds/${name}/tar.gz/master`);
+
+  console.log("Extracting files... from", tempFile);
 
   await tar.x({
     file: tempFile,

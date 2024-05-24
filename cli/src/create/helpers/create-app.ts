@@ -64,6 +64,7 @@ export async function createApp({
         retries: 3,
       }
     );
+
   } catch (reason) {
     throw new DownloadError(
       isErrorLike(reason) ? reason.message : String(reason)

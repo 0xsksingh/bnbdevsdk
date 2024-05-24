@@ -3,6 +3,7 @@
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "allowJs": true
   }
 }
