@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         </span>
       </h1>
       <p className="text-xl text-muted-foreground">
-        A collection of tools for quickly building Dapps on BNB Chains including OPBNB, BSC and BNB GreenField.
+        A comprehensive web3 dev stack for developers to quickly build Dapps on BNB Chains including OPBNB, BSC and BNB GreenField.
       </p>
       <div className="flex flex-row items-center gap-4 pt-6 pb-16 ">
         <Link

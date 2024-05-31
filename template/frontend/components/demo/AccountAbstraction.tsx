@@ -79,9 +79,9 @@ const AccountAbstraction = () => {
         </div>
       ) : (
         <div className={styles.profilecard}>
-          <h2>{userInfo.name}</h2>
+          <h2 className='text-black'>{userInfo.name}</h2>
           <div className={styles.balancesection}>
-            <small>{balance} MNT</small>
+            <small className="text-green-400">{balance} BNB</small>
             <button className={styles.signmessagebutton} onClick={executeUserOp}>Execute User Operation</button>
             <button className={styles.disconnectbutton} onClick={disconnect}>Logout</button>
           </div>
