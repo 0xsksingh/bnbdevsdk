@@ -13,8 +13,8 @@ const tabs = [
   { name: "Wallet Connection", component: <WalletConnection /> },
   { name: "Contract Interaction", component: <ContractInteraction /> },
   { name: "User Authentication", component: <UserAuthentication /> },
-  { name: "Decentralized Storage", component: <DecentralizedStorage /> },
-  { name: "Coming Soon", component: <Storages /> },
+  { name: "Store on BNB GreenField", component: <Storages /> },
+  { name: "IPFS Storage", component: <DecentralizedStorage /> },
 ];
 
 const Home: NextPage = () => {

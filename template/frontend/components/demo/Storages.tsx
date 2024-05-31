@@ -3,13 +3,13 @@ import { client, selectSp } from '../../lib/client';
 import { getOffchainAuthKeys } from '../../utils/offchainAuth';
 import { Long, OnProgressEvent, VisibilityType } from '@bnb-chain/greenfield-js-sdk';
 import { useState } from 'react';
-import { useAddress, useSigner } from '@thirdweb-dev/react';
+import { useAddress } from '@thirdweb-dev/react';
 import { Button } from "@/components/ui/button";
+import {ethers} from 'ethers';
 
 export default function Storages ()  {
 
   const address  = useAddress();
-  const signer = useSigner();
   
   const [info, setInfo] = useState<{
     bucketName: string;
@@ -65,9 +65,12 @@ export default function Storages ()  {
             const spInfo = await selectSp();
             console.log('spInfo', spInfo);
 
-            const provider = await signer?.provider;
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const p = provider.provider;
 
-            const offChainData = await getOffchainAuthKeys(address, provider);
+            console.log(provider,"provider<<<<");
+
+            const offChainData = await getOffchainAuthKeys(address, p);
 
             if (!offChainData) {
               alert('No offchain, please create offchain pairs first');
@@ -169,7 +172,7 @@ export default function Storages ()  {
 
         {/* upload */}
         <div className="field">
-          <button
+          <Button
             className="button is-primary"
             onClick={async () => {
               if (!address || !info.file) return;
@@ -177,8 +180,10 @@ export default function Storages ()  {
               const spInfo = await selectSp();
               console.log('spInfo', spInfo);
 
-              const provider = await signer?.provider;
+              const provider = new ethers.providers.Web3Provider(window.ethereum);
+
               const offChainData = await getOffchainAuthKeys(address, provider);
+
               if (!offChainData) {
                 alert('No offchain, please create offchain pairs first');
                 return;
@@ -217,7 +222,7 @@ export default function Storages ()  {
             }}
           >
             Delegrate Upload
-          </button>
+          </Button>
         </div>
 
         {/* Download */}
@@ -230,7 +235,7 @@ export default function Storages ()  {
               const spInfo = await selectSp();
               console.log('spInfo', spInfo);
 
-              const provider = await signer?.provider;
+              const provider = new ethers.providers.Web3Provider(window.ethereum);
               const offChainData = await getOffchainAuthKeys(address, provider);
               if (!offChainData) {
                 alert('No offchain, please create offchain pairs first');
