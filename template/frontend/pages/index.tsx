@@ -10,9 +10,11 @@ import ContractInteraction from "@/components/demo/ContractInteraction";
 import Storages from "@/components/demo/Storages";
 import Image from "next/image";
 import Showcasecover from "@/components/demo/Showcasecover";
+import AccountAbstraction from "@/components/demo/AccountAbstraction";
 
 const tabs = [
   { name: "Introduction", component: <Showcasecover />},
+  { name: "Account Abstraction", component: <AccountAbstraction />},
   { name: "Wallet Connection", component: <WalletConnection /> },
   { name: "Contract Interaction", component: <ContractInteraction /> },
   { name: "User Authentication", component: <UserAuthentication /> },
@@ -32,7 +34,7 @@ const Home: NextPage = () => {
         text-gray-400
         "
         >
-          powered by shadcn UI Kit
+          powered by shadcn UI, Thirdweb , ParticleAuth Account Abstraction
         </span>
       </h1>
       <p className="text-xl text-muted-foreground">

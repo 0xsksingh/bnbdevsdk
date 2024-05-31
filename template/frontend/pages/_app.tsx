@@ -5,6 +5,8 @@ import { Nav } from "../components/Navbar";
 import Head from "next/head";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import { opBNBTestnet, BNBChainTestnet } from '@particle-network/chains';
+import { AuthCoreContextProvider } from '@particle-network/auth-core-modal';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,8 +30,26 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
           clientId={process.env.NEXT_PUBLIC_THIRDWEB_API_KEY}
         >
+          <AuthCoreContextProvider
+            options={{
+              projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
+              clientKey: process.env.NEXT_PUBLIC_CLIENT_KEY!,
+              appId: process.env.NEXT_PUBLIC_APP_ID!,
+              erc4337: {
+                name: 'SIMPLE',
+                version: '1.0.0',
+              },
+              wallet: {
+                visible: true,
+                customStyle: {
+                    supportChains: [BNBChainTestnet, opBNBTestnet],
+                }
+              }
+            }}
+          >
           <Nav />
           <Component {...pageProps} />
+          </AuthCoreContextProvider>
         </ThirdwebProvider>
       </main>
     </div>
