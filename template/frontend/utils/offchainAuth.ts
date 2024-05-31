@@ -32,6 +32,8 @@ export const getOffchainAuthKeys = async (address: string, provider: any) => {
     provider,
   );
 
+  console.log(offchainAuthRes,"offchainAuthRes")
+
   const { code, body: offChainData } = offchainAuthRes;
   if (code !== 0 || !offChainData) {
     throw offchainAuthRes;

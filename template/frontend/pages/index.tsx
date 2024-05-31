@@ -7,14 +7,14 @@ import WalletConnection from "@/components/demo/WalletConnection";
 import UserAuthentication from "@/components/demo/UserAuthentication";
 import DecentralizedStorage from "@/components/demo/DecentralizedStorage";
 import ContractInteraction from "@/components/demo/ContractInteraction";
-import Storages from "./Storages";
+import Storages from "@/components/demo/Storages";
 
 const tabs = [
   { name: "Wallet Connection", component: <WalletConnection /> },
   { name: "Contract Interaction", component: <ContractInteraction /> },
   { name: "User Authentication", component: <UserAuthentication /> },
   { name: "Decentralized Storage", component: <DecentralizedStorage /> },
-  // { name: "Coming Soon", component: <Storages /> },
+  { name: "Coming Soon", component: <Storages /> },
 ];
 
 const Home: NextPage = () => {

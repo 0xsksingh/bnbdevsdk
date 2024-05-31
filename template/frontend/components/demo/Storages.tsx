@@ -1,9 +1,10 @@
 "use client";
-import { client, selectSp } from '../lib/client';
-import { getOffchainAuthKeys } from '../utils/offchainAuth';
+import { client, selectSp } from '../../lib/client';
+import { getOffchainAuthKeys } from '../../utils/offchainAuth';
 import { Long, OnProgressEvent, VisibilityType } from '@bnb-chain/greenfield-js-sdk';
 import { useState } from 'react';
 import { useAddress, useSigner } from '@thirdweb-dev/react';
+import { Button } from "@/components/ui/button";
 
 export default function Storages ()  {
 
@@ -56,7 +57,7 @@ export default function Storages ()  {
         </div>
 
         <div className="field">
-          <button
+          <Button
             className={'button is-primary'}
             onClick={async () => {
             if (!address) return;
@@ -67,10 +68,13 @@ export default function Storages ()  {
             const provider = await signer?.provider;
 
             const offChainData = await getOffchainAuthKeys(address, provider);
+
             if (!offChainData) {
               alert('No offchain, please create offchain pairs first');
               return;
             }
+
+            console.log(provider,"provider",offChainData,"offChainData");
 
             try {
               const createBucketTx = await client.bucket.createBucket(
@@ -114,7 +118,7 @@ export default function Storages ()  {
           }}
           >
             Create Bucket Tx
-          </button>
+          </Button>
         </div>
       </div>
 

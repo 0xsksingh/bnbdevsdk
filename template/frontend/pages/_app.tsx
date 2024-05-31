@@ -22,10 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           // Set active chain for app
           activeChain={CHAIN}
           // Auth (SIWE) configuration
-          authConfig={{
-            domain: process.env.NEXT_PUBLIC_AUTH_DOMAIN!,
-            authUrl: "/api/auth",
-          }}
+          // authConfig={{
+          //   domain: process.env.NEXT_PUBLIC_AUTH_DOMAIN!,
+          //   authUrl: "/api/auth",
+          // }}
           clientId={process.env.NEXT_PUBLIC_THIRDWEB_API_KEY}
         >
           <Nav />
