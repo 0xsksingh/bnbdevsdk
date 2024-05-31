@@ -23,42 +23,34 @@ export default function Storages ()  {
 
   return (
     <>
-      <section className="section">
-        <div className="container">
-          <h1 className="title">
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold mb-4">
             Greenfield Storage
           </h1>
-          <p className="subtitle">
+          <p className="text-xl text-gray-600">
             Create Bucket / Create Object / Upload File / Download File
           </p>
         </div>
       </section>
 
-      <div className='box'>
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label className="label">Bucket</label>
-          </div>
-          <div className="field-body">
-            <div className="field">
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  value={info.bucketName}
-                  placeholder="bucket name"
-                  onChange={(e) => {
-                    setInfo({ ...info, bucketName: e.target.value });
-                  }}
-                />
-              </div>
-            </div>
-          </div>
+      <div className='bg-white shadow-md rounded p-6 mb-6'>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2">Bucket</label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            value={info.bucketName}
+            placeholder="bucket name"
+            onChange={(e) => {
+              setInfo({ ...info, bucketName: e.target.value });
+            }}
+          />
         </div>
 
-        <div className="field">
+        <div className="mb-4">
           <Button
-            className={'button is-primary'}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={async () => {
             if (!address) return;
 
@@ -125,32 +117,27 @@ export default function Storages ()  {
         </div>
       </div>
 
-      <div className='box'>
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label className="label">Object</label>
-          </div>
-          <div className="field-body">
-            <div className="field">
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  value={info.objectName}
-                  placeholder="object name"
-                  onChange={(e) => {
-                    setInfo({ ...info, objectName: e.target.value });
-                  }}
-                />
-              </div>
-            </div>
-          </div>
+      <div className='bg-white shadow-md rounded p-6 mb-6'>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2">Object</label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            value={info.objectName}
+            placeholder="object name"
+            onChange={(e) => {
+              setInfo({ ...info, objectName: e.target.value });
+            }}
+          />
         </div>
 
-        <div className="field is-horizontal">
-          <div className="file">
-            <label className="file-label">
-              <input className="file-input" type="file" name="resume" onChange={(e) => {
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2">File</label>
+          <div className="flex items-center justify-center w-full">
+            <label className="flex flex-col items-center px-4 py-6 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue-500 hover:text-white">
+              <svg className="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16.88 4.12a4.5 4.5 0 1 0-6.36 6.36L10 12l.12.12a4.5 4.5 0 1 0 6.36-6.36L16 6l.88-.88zm-1.06 5.24a3.5 3.5 0 1 1-4.95-4.95 3.5 3.5 0 0 1 4.95 4.95zM7 8l1.293-1.293 3.207 3.207L15 7.5 14.5 7l-3.5 3.5-3.207-3.207L7 8zm1.5 8H4v-2h1.5v2zM4 16H3v-1.5h1V16zm12 0h-1.5v-2H16v2zM12 16h-1v-1.5h1V16z"/></svg>
+              <span className="mt-2 text-base leading-normal">Select a file</span>
+              <input type='file' className="hidden" onChange={(e) => {
                 if (e.target.files) {
                   setInfo({
                     ...info,
@@ -158,22 +145,14 @@ export default function Storages ()  {
                   })
                 }
               }} />
-              <span className="file-cta">
-                <span className="file-icon">
-                  <i className="fas fa-upload"></i>
-                </span>
-                <span className="file-label">
-                  Choose a file…
-                </span>
-              </span>
             </label>
           </div>
         </div>
 
         {/* upload */}
-        <div className="field">
+        <div className="mb-4">
           <Button
-            className="button is-primary"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={async () => {
               if (!address || !info.file) return;
 
@@ -221,14 +200,14 @@ export default function Storages ()  {
               }
             }}
           >
-            Delegrate Upload
+            Delegate Upload
           </Button>
         </div>
 
         {/* Download */}
-        <div className='field'>
-          <button
-            className="button is-primary"
+        <div className='mb-4'>
+          <Button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={async () => {
               if (!address) return;
 
@@ -259,7 +238,7 @@ export default function Storages ()  {
             }}
           >
             Download
-          </button>
+          </Button>
         </div>
       </div>
     </>

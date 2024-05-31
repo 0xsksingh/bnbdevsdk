@@ -9,8 +9,8 @@ import { IS_DEV_ENV } from "./chains";
 
 // For example, below, we have a Greeter smart contract that has two addresses defined.
 // Then, we use the IS_DEV_ENV variable to determine which address to use in the current environment.
-const greeter_dev = "0x7D149a51aF663870f512697c7Cdb781867Fbc465";
-const greeter_prod = "0x7D149a51aF663870f512697c7Cdb781867Fbc465";
+const greeter_dev = "0xc95fB4f377Ce1C45eFA5eFE6A466BE8c316ebc64";
+const greeter_prod = "0xc95fB4f377Ce1C45eFA5eFE6A466BE8c316ebc64";
 
 // Below, we force the typescript type to be of the dev address type.
 // This is to ensure thirdweb generate knows what the ABI is when using useContract

@@ -8,8 +8,11 @@ import UserAuthentication from "@/components/demo/UserAuthentication";
 import DecentralizedStorage from "@/components/demo/DecentralizedStorage";
 import ContractInteraction from "@/components/demo/ContractInteraction";
 import Storages from "@/components/demo/Storages";
+import Image from "next/image";
+import Showcasecover from "@/components/demo/Showcasecover";
 
 const tabs = [
+  { name: "Introduction", component: <Showcasecover />},
   { name: "Wallet Connection", component: <WalletConnection /> },
   { name: "Contract Interaction", component: <ContractInteraction /> },
   { name: "User Authentication", component: <UserAuthentication /> },
@@ -33,7 +36,7 @@ const Home: NextPage = () => {
         </span>
       </h1>
       <p className="text-xl text-muted-foreground">
-        A collection of tools for building Dapps quickly on BNB Chains.
+        A collection of tools for quickly building Dapps on BNB Chains including OPBNB, BSC and BNB GreenField.
       </p>
       <div className="flex flex-row items-center gap-4 pt-6 pb-16 ">
         <Link
