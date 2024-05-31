@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Get started with BNB Dev SDK by running <code>npx bnbdevsdk create my-bnb-app</code>
+  Get started with BNB Dev SDK by running <code>npx bnb-dev-sdk create my-bnb-app</code>
 </p>
 
 ## What is BNB Dev SDK?
@@ -35,7 +35,7 @@ BNB Dev SDK includes everything you need in a modern web3 development stack:
 To start building your web3 application with BNB Dev SDK, run the following command:
 
 ```sh
-npx bnbdevsdk create my-bnb-app
+npx bnb-dev-sdk create my-bnb-app
 ```
 
 This command sets up a new project with the necessary structure and dependencies to get you up and running quickly.
